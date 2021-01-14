@@ -31,7 +31,7 @@ namespace CourseManagment
             epl.Apellido = txtApellido.Text;
             epl.Direccion = txtDireccion.Text;
             epl.Rut = txtRUT.Text;
-            epl.Codigo = int.Parse(txtCodigo.Text);
+            epl.Codigo = Convert.ToInt32(txtCodigo.Text);
             epl.Sueldo = Convert.ToDecimal(txtSueldo.Text);
 
             this.empleadobl.agregarEmpleado(epl);
