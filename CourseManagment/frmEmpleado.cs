@@ -35,7 +35,7 @@ namespace CourseManagment
             epl.Sueldo = Convert.ToDecimal(txtSueldo.Text);
 
             this.empleadobl.agregarEmpleado(epl);
-            dgvEmpleado.DataSource = this.empleadobl.obtenerEmpleados();
+            dgvEmpleado.DataSource = this.empleadobl.obtenerEmpleados().ToArray();
             dgvEmpleado.Refresh();
 
         }

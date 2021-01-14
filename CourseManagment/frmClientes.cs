@@ -35,7 +35,7 @@ namespace CourseManagment
 
             clientesBL.agregarClientes(cli);
 
-            dataGridView1.DataSource = clientesBL.obtenerClientes();
+            dataGridView1.DataSource = clientesBL.obtenerClientes().ToArray();
             dataGridView1.Refresh();
         }
     }
