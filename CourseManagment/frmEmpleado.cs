@@ -31,13 +31,39 @@ namespace CourseManagment
             epl.Apellido = txtApellido.Text;
             epl.Direccion = txtDireccion.Text;
             epl.Rut = txtRUT.Text;
-            epl.Codigo = Convert.ToInt32(txtCodigo.Text);
-            epl.Sueldo = Convert.ToDecimal(txtSueldo.Text);
+            int numberint;
+            decimal numberdecimal;
+            bool successint = Int32.TryParse(txtCodigo.Text, out numberint);
+            if (successint)
+            {
+                epl.Codigo = Convert.ToInt32(txtCodigo.Text);
+            }
+            else {
+                MessageBox.Show("Debe ser entero el codigo");
+            }
+            bool successdecimal = decimal.TryParse(txtSueldo.Text, out numberdecimal);
+            if (successdecimal)
+            {
+                epl.Sueldo = Convert.ToDecimal(txtSueldo.Text);
+            }
+            else
+            {
+                MessageBox.Show("Debe ser entero el codigo");
+            }
+            //
+
 
             this.empleadobl.agregarEmpleado(epl);
             dgvEmpleado.DataSource = this.empleadobl.obtenerEmpleados().ToArray();
             dgvEmpleado.Refresh();
 
+
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

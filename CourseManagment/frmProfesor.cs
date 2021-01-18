@@ -38,5 +38,10 @@ namespace CourseManagment
             dgvProfesor.DataSource = this.profesorBL.obtenerProfesores().ToArray();
             dgvProfesor.Refresh();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

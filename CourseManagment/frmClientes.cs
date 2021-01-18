@@ -38,5 +38,10 @@ namespace CourseManagment
             dataGridView1.DataSource = clientesBL.obtenerClientes().ToArray();
             dataGridView1.Refresh();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

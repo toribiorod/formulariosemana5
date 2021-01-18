@@ -60,6 +60,7 @@ namespace CourseManagment
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
             // 

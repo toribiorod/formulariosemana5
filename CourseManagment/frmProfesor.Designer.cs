@@ -37,6 +37,8 @@ namespace CourseManagment
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDepartamento = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtRUT = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@ namespace CourseManagment
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDepartamento = new System.Windows.Forms.TextBox();
             btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesor)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -62,6 +62,7 @@ namespace CourseManagment
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvProfesor
             // 
@@ -128,6 +129,22 @@ namespace CourseManagment
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos  Empleado";
+            // 
+            // txtDepartamento
+            // 
+            this.txtDepartamento.Location = new System.Drawing.Point(134, 88);
+            this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Size = new System.Drawing.Size(100, 23);
+            this.txtDepartamento.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 88);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Departamento";
             // 
             // txtRUT
             // 
@@ -209,22 +226,6 @@ namespace CourseManagment
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 88);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Departamento";
-            // 
-            // txtDepartamento
-            // 
-            this.txtDepartamento.Location = new System.Drawing.Point(134, 88);
-            this.txtDepartamento.Name = "txtDepartamento";
-            this.txtDepartamento.Size = new System.Drawing.Size(100, 23);
-            this.txtDepartamento.TabIndex = 5;
             // 
             // frmProfesor
             // 
