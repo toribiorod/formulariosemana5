@@ -48,7 +48,7 @@ namespace CourseManagment
             }
             else
             {
-                MessageBox.Show("Debe ser entero el codigo");
+                MessageBox.Show("Debe ser decimal el sueldo");
             }
             //
 
