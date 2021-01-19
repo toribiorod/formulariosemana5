@@ -11,6 +11,7 @@ namespace CourseManagment.Domain.Entities
         #region "Propiedades"
 
         private List<Cliente> clientes;
+        public int clienteID { get; set; }
         public string Cuenta { get; set; }
 
         #endregion

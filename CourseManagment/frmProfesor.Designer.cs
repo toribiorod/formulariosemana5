@@ -48,6 +48,7 @@ namespace CourseManagment
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesor)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -56,7 +57,7 @@ namespace CourseManagment
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(663, 199);
+            btnCancelar.Location = new System.Drawing.Point(713, 199);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(75, 23);
             btnCancelar.TabIndex = 9;
@@ -69,9 +70,9 @@ namespace CourseManagment
             this.dgvProfesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfesor.Location = new System.Drawing.Point(45, 329);
             this.dgvProfesor.Name = "dgvProfesor";
-            this.dgvProfesor.RowTemplate.Height = 25;
             this.dgvProfesor.Size = new System.Drawing.Size(712, 118);
             this.dgvProfesor.TabIndex = 7;
+            this.dgvProfesor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfesor_CellClick);
             // 
             // label6
             // 
@@ -107,7 +108,7 @@ namespace CourseManagment
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(545, 199);
+            this.btnGuardar.Location = new System.Drawing.Point(493, 198);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 8;
@@ -227,11 +228,22 @@ namespace CourseManagment
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(608, 198);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(btnCancelar);
             this.Controls.Add(this.dgvProfesor);
             this.Controls.Add(this.btnGuardar);
@@ -269,5 +281,6 @@ namespace CourseManagment
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDepartamento;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

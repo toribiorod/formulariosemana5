@@ -9,7 +9,7 @@ namespace CourseManagment.Domain.Entities
     {
         #region "Propiedades"
 
-        
+        public int ProfesorID { get; set; }
         private List<Profesor> profesores;
         public string Codigo { get; set; }
         public string Carrera { get; set; }
