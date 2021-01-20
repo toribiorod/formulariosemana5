@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CourseManagment.Domain.Entities;
+using CourseManagment.Domain.Excepcions;
 
 namespace CourseManagment.Domain.Entities
 {
@@ -12,7 +13,20 @@ namespace CourseManagment.Domain.Entities
 
         private List<Cliente> clientes;
         public int clienteID { get; set; }
-        public string Cuenta { get; set; }
+        public string _cuenta;
+        public string Cuenta {
+            get {
+                return this._cuenta;            
+            }
+
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ClienteException("La cuenta del cliente no puede estar vacía");
+                }
+                _cuenta = value;
+            }     
+               
+        }
 
         #endregion
 

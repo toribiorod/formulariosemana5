@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using CourseManagment.Domain.Entities;
 using CourseManagment.Domain.BL;
+using CourseManagment.Domain.Excepcions;
 
 namespace CourseManagment
 {
@@ -26,23 +22,31 @@ namespace CourseManagment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cliente cli = new Cliente() {
+            try {
+                Cliente cli = new Cliente() {
 
-                Nombre = txtNombre.Text,
-                Apellido = txtApellido.Text,
-                Direccion = txtDireccion.Text,
-                Rut = txtRut.Text,
-                Cuenta = txtCuenta.Text,
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Direccion = txtDireccion.Text,
+                    Rut = txtRut.Text,
+                    Cuenta = txtCuenta.Text,
 
-        };
-            //clientesBL.agregarClientes(cli);
-            //dataGridView1.DataSource = clientesBL.obtenerClientes().ToArray();
-            this.clientesBL.guardar(cli);
-            CargarClientes();
-            LimpiarCampos();
+                };
+                //clientesBL.agregarClientes(cli);
+                //dataGridView1.DataSource = clientesBL.obtenerClientes().ToArray();
+                this.clientesBL.guardar(cli);
+                CargarClientes();
+                LimpiarCampos();
+                dgvClientes.Refresh();
+                MessageBox.Show("Cliente agregado correctamente");
+            }
+            catch (ClienteException ex) {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Error al agregar un nuevo cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-
-            dgvClientes.Refresh();
         }
 
         public void CargarClientes() {
@@ -57,8 +61,6 @@ namespace CourseManagment
             txtDireccion.Text = string.Empty;
             txtRut.Text = string.Empty;
             txtCuenta.Text = string.Empty;
-
-
             txtNombre.Focus();
         }
         private void button2_Click(object sender, EventArgs e)

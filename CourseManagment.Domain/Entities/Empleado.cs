@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CourseManagment.Domain.Excepcions;
 
 namespace CourseManagment.Domain.Entities
 {
@@ -9,8 +10,26 @@ namespace CourseManagment.Domain.Entities
         #region "Propiedades"
         
         private List<Empleado> empleados;
-        public decimal Sueldo { get; set; }
-        public int Codigo { get; set; }
+        private decimal _sueldo;
+        private int _codigo;
+        public decimal Sueldo {
+
+            get {
+                return this._sueldo;
+            }
+
+            set {
+                if (!decimal.TryParse(_sueldo.ToString(), out decimal outParamName))
+                {
+                    throw new EmpleadoException("Error no es decimal");
+                }
+                _sueldo = value;
+
+            }
+        
+        
+        }
+        public int Codigo { get { return this._codigo; } set { _codigo = value; } }
 
         #endregion
 

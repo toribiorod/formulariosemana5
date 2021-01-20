@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using CourseManagment.Domain.Entities;
 using CourseManagment.Domain.BL;
-
+using CourseManagment.Domain.Excepcions;
 namespace CourseManagment
 {
     public partial class frmEmpleado : Form
@@ -28,23 +23,36 @@ namespace CourseManagment
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Empleado epl = new Empleado() { 
+            try
+            {
+                Empleado epl = new Empleado()
+                {
 
-            Nombre = txtNombre.Text,
-            Apellido = txtApellido.Text,
-            Direccion = txtDireccion.Text,
-            Rut = txtRUT.Text,
-            Codigo = Convert.ToInt32(txtCodigo.Text),
-            Sueldo = Convert.ToDecimal(txtSueldo.Text),
-        };
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Direccion = txtDireccion.Text,
+                    Rut = txtRUT.Text,
+                    Codigo = Convert.ToInt32(txtCodigo.Text),
+                    Sueldo = Convert.ToDecimal(txtSueldo.Text),
+                };
+                //
+                this.empleadobl.guardar(epl);
+                // this.empleadobl.agregarEmpleado(epl);
+                //  dgvEmpleado.DataSource = this.empleadobl.obtenerEmpleados().ToArray();
+                CargaEmpleados();
+                LimpiarCampos();
+                dgvEmpleado.Refresh();
 
-            //
-            this.empleadobl.guardar(epl);
-            // this.empleadobl.agregarEmpleado(epl);
-            //  dgvEmpleado.DataSource = this.empleadobl.obtenerEmpleados().ToArray();
-            CargaEmpleados();
-            LimpiarCampos();
-            dgvEmpleado.Refresh();
+            }
+            catch(EmpleadoException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Error al agregar empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
 
 

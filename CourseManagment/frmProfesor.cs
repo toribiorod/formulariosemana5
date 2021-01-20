@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using CourseManagment.Domain.Entities;
 using CourseManagment.Domain.BL;
+using CourseManagment.Domain.Excepcions;
 
 namespace CourseManagment
 {
@@ -33,24 +29,34 @@ namespace CourseManagment
              pro.Rut = txtRUT.Text;
              pro.Codigo = txtCodigo.Text;
              pro.Carrera = txtCarrera.Text;
-             pro.Departamento = txtDepartamento.Text;*/
-            Profesor pro = new Profesor()
+             pro.Departamento = txtDepartamento.Text;*/           
+            try
             {
-                Nombre = txtNombre.Text,
-                Apellido= txtApellido.Text,
-                Direccion = txtDireccion.Text,
-                Rut = txtRUT.Text,
-                Codigo = txtCodigo.Text,
-                Carrera = txtCarrera.Text,
-                Departamento = txtDepartamento.Text
-        };
-
-            //this.profesorBL.agregarProfesores(pro);
-            //dgvProfesor.DataSource = this.profesorBL.obtenerProfesores().ToArray();
-            this.profesorBL.guardar(pro);
-            CargaProfesores();
-            LimpiarCampos();
-            dgvProfesor.Refresh();
+                Profesor pro = new Profesor()
+                {
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Direccion = txtDireccion.Text,
+                    Rut = txtRUT.Text,
+                    Codigo = txtCodigo.Text,
+                    Carrera = txtCarrera.Text,
+                    Departamento = txtDepartamento.Text
+                };
+                //this.profesorBL.agregarProfesores(pro);
+                //dgvProfesor.DataSource = this.profesorBL.obtenerProfesores().ToArray();
+                this.profesorBL.guardar(pro);
+                CargaProfesores();
+                LimpiarCampos();
+                dgvProfesor.Refresh();
+            }
+            catch (ProfesorException pex)
+            {
+                MessageBox.Show(pex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error tratando de agregar el profesor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
