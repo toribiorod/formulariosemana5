@@ -42,6 +42,7 @@ namespace CourseManagment
                 CargaEmpleados();
                 LimpiarCampos();
                 dgvEmpleado.Refresh();
+                MessageBox.Show("El empleado fue creado correctamente", "Informacion");
 
             }
             catch(EmpleadoException ex)

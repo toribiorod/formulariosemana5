@@ -38,7 +38,7 @@ namespace CourseManagment
                 CargarClientes();
                 LimpiarCampos();
                 dgvClientes.Refresh();
-                MessageBox.Show("Cliente agregado correctamente");
+                MessageBox.Show("El cliente agregado correctamente", "Información");
             }
             catch (ClienteException ex) {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -48,6 +48,7 @@ namespace CourseManagment
                 CargaProfesores();
                 LimpiarCampos();
                 dgvProfesor.Refresh();
+                MessageBox.Show("El profesor fue creado correctamente", "Informacion");
             }
             catch (ProfesorException pex)
             {
