@@ -21,15 +21,36 @@ namespace CourseManagment.Domain.Entities
             set {
                 if (!decimal.TryParse(_sueldo.ToString(), out decimal outParamName))
                 {
-                    throw new EmpleadoException("Error no es decimal");
+                    _sueldo = value;
                 }
-                _sueldo = value;
+                else {
+                    throw new EmpleadoException("Error no es decimal");
+                }             
 
             }
         
         
         }
-        public int Codigo { get { return this._codigo; } set { _codigo = value; } }
+        public int Codigo { 
+            get { 
+                return this._codigo; 
+            
+            } 
+            set {
+                int myInt;
+                bool isNumerical = int.TryParse(_sueldo.ToString(), out myInt);
+                if (isNumerical)
+                {
+                    _codigo = value;
+                }
+                else {
+                    throw new EmpleadoException("Error , el código debe ser número");
+                }
+
+                
+            } 
+        
+        }
 
         #endregion
 
