@@ -19,13 +19,13 @@ namespace CourseManagment.Domain.Entities
             }
 
             set {
-                if (!decimal.TryParse(_sueldo.ToString(), out decimal outParamName))
+                if (decimal.TryParse(_sueldo.ToString(), out decimal outParamName))
                 {
                     _sueldo = value;
                 }
                 else {
                     throw new EmpleadoException("Error no es decimal");
-                }             
+                }              
 
             }
         
