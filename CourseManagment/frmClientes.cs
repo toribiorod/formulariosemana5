@@ -9,6 +9,7 @@ namespace CourseManagment
     public partial class frmClientes : Form
     {
         private ClienteBL clientesBL;
+        private int clienteID;
         public frmClientes()
         {
             this.clientesBL = new ClienteBL();
@@ -81,7 +82,7 @@ namespace CourseManagment
                 MessageBox.Show("El codigo del Cliente es requerido.", "Eliminar profesor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCuenta.Focus();
             }
-            Cliente clie = this.clientesBL.obtenerIntety(Convert.ToInt32(txtCuenta.Text));
+            Cliente clie = this.clientesBL.ObtenerEntity(this.clienteID);
             this.clientesBL.eliminar(clie);
             LimpiarCampos();
             CargarClientes();

@@ -30,7 +30,7 @@ namespace CourseManagment.Domain.Entities
 
         #endregion
 
-
+       /*
         #region "Metodos
         public Cliente() {
 
@@ -56,7 +56,7 @@ namespace CourseManagment.Domain.Entities
         /*public Cliente obtenerClientes(string cuenta) {
             return this.clientes.Find(cl => this.Cuenta == cuenta);
         }*/
-        /// <summary>
+       /* /// <summary>
         /// Obtener Clientes pasando como párametro el numero de cuenta
         /// </summary>
         /// <param name="cuenta"> Número de cuenta</param>
@@ -71,6 +71,6 @@ namespace CourseManagment.Domain.Entities
         public List<Cliente> obtenerClientes() {
             return this.clientes;
         }
-        #endregion
+        #endregion*/
     }
 }

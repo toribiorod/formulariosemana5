@@ -1,10 +1,11 @@
 ﻿using CourseManagment.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
+using CourseManagment.Domain.Interfaces;
 
 namespace CourseManagment.Domain.BL
 {
-    public class ClienteBL : IBaseEntity<Cliente>
+    public class ClienteBL : BaseBL<Cliente>, ICliente
     {
         private List<Cliente> clientes;
 
@@ -12,38 +13,53 @@ namespace CourseManagment.Domain.BL
             this.clientes = new List<Cliente>();
         }
 
-        public void actualizart(Cliente ientity)
+        public Cliente ObtenerClientePorCuenta(string cuenta)
         {
-            throw new System.NotImplementedException();
+            return base.Entities.SingleOrDefault(cliente => cliente.Cuenta == cuenta);
         }
 
-        public void eliminar(Cliente ientity)
+        public Cliente ObtenerEntity(int Id)
         {
-            this.clientes.Remove(ientity);
+            return base.Entities.Find(cliente => cliente.clienteID == Id);
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="ientity">Class</param>
-        public void guardar(Cliente ientity)
+        public override void guardar(Cliente entity)
         {
-            ientity.clienteID = this.clientes.Count == 0 ? 1 : this.clientes.Max(clientes => clientes.clienteID) + 1;
-            this.clientes.Add(ientity);
+            base.guardar(entity);
         }
 
-        public List<Cliente> obtenerEntity()
-        {
-           return this.clientes;
-        }
 
-        public Cliente obtenerIntety(int Id)
-        {
-            return this.clientes.Find(cli=>cli.clienteID==Id);
-        }
+        /*   public void actualizart(Cliente ientity)
+           {
+               throw new System.NotImplementedException();
+           }
 
-           public List<Cliente> obtenerRegistro()
-        {
-            return this.clientes;
-        }
+           public void eliminar(Cliente ientity)
+           {
+               this.clientes.Remove(ientity);
+           }
+           /// <summary>
+           /// 
+           /// </summary>
+           /// <param name="ientity">Class</param>
+           public void guardar(Cliente ientity)
+           {
+               ientity.clienteID = this.clientes.Count == 0 ? 1 : this.clientes.Max(clientes => clientes.clienteID) + 1;
+               this.clientes.Add(ientity);
+           }
+
+           public List<Cliente> obtenerEntity()
+           {
+              return this.clientes;
+           }
+
+           public Cliente obtenerIntety(int Id)
+           {
+               return this.clientes.Find(cli=>cli.clienteID==Id);
+           }
+
+              public List<Cliente> obtenerRegistro()
+           {
+               return this.clientes;
+           }*/
     }
 }
