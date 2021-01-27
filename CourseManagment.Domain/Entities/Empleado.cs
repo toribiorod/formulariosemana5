@@ -60,29 +60,29 @@ namespace CourseManagment.Domain.Entities
         public Empleado() {
             this.empleados = new List<Empleado>();          
         }
-        /// <summary>
-        /// Agregar un emeplado
-        /// </summary>
-        /// <param name="empleado"></param>
-        public void agregarEmpleado(Empleado empleado) {
-            this.empleados.Add(empleado);        
-        }
-        /// <summary>
-        /// Eliminar un empleado
-        /// </summary>
-        /// <param name="codigo"></param>
-        public void eliminarEmpleado(int codigo) {
-            var epl = this.empleados.Find(ep => this.Codigo == codigo);
-            this.empleados.Remove(epl);
-        }
-        /// <summary>
-        /// Obtener todos los empleados
-        /// </summary>
-        /// <returns></returns>
-        public List<Empleado> obtenerEmpleados() {
+        /* /// <summary>
+         /// Agregar un emeplado
+         /// </summary>
+         /// <param name="empleado"></param>
+         public void agregarEmpleado(Empleado empleado) {
+             this.empleados.Add(empleado);        
+         }
+         /// <summary>
+         /// Eliminar un empleado
+         /// </summary>
+         /// <param name="codigo"></param>
+         public void eliminarEmpleado(int codigo) {
+             var epl = this.empleados.Find(ep => this.Codigo == codigo);
+             this.empleados.Remove(epl);
+         }
+         /// <summary>
+         /// Obtener todos los empleados
+         /// </summary>
+         /// <returns></returns>
+         public List<Empleado> obtenerEmpleados() {
 
-            return this.empleados;
-        }
+             return this.empleados;
+         }*/
         #endregion
 
     }

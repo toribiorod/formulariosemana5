@@ -24,6 +24,7 @@ namespace CourseManagment.Domain.BL
         }
         public override void guardar(Cliente entity)
         {
+            entity.clienteID = base.Entities.Count == 0 ? 1 : base.Entities.Max(cliente => cliente.clienteID) + 1;
             base.guardar(entity);
         }
 

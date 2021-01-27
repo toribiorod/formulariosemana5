@@ -74,12 +74,12 @@ namespace CourseManagment.Domain.Entities
             this.profesores = new List<Profesor>();
         }
 
-        public void agregarProfesores(Profesor profe) {
+      /*  public void agregarProfesores(Profesor profe) {
             this.profesores.Add(profe);
         }
         public List<Profesor> obtenerProfesores() {
             return this.profesores;
-        }
+        }*/
 
         #endregion
     }

@@ -107,7 +107,7 @@ namespace CourseManagment
                 MessageBox.Show("El codigo del empleado es requerido.", "Eliminar profesor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCodigo.Focus();
             }
-            Empleado empleado = this.empleadobl.obtenerIntety(Convert.ToInt32(txtCodigo.Text));
+            Empleado empleado = this.empleadobl.ObtenerEntity(Convert.ToInt32(txtCodigo.Text));
             this.empleadobl.eliminar(empleado);
             LimpiarCampos();
             CargaEmpleados();
