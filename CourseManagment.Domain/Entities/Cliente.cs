@@ -11,7 +11,7 @@ namespace CourseManagment.Domain.Entities
     {
         #region "Propiedades"
 
-        private List<Cliente> clientes;
+       // private List<Cliente> clientes;
         public int clienteID { get; set; }
         public string _cuenta;
         public string Cuenta {
@@ -30,14 +30,14 @@ namespace CourseManagment.Domain.Entities
 
         #endregion
 
-      
+
         #region "Metodos
-        public Cliente() {
+        /*public Cliente() {
 
             this.clientes = new List<Cliente>();
         
         }
-        /*/// <summary>
+        /// <summary>
        /// Agregar Cliente
        /// </summary>
        /// <param name="cliente"></param>

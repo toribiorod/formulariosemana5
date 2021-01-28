@@ -9,11 +9,11 @@ namespace CourseManagment.Domain.BL
     public class EmpleadoBL : BaseBL<Empleado>, IEmpleado
     {
 
-        private List<Empleado> empleados;
-        public EmpleadoBL() {
+        //private List<Empleado> empleados;
+        /*public EmpleadoBL() {
 
             this.empleados = new List<Empleado>();
-        }
+        }*/
         public override void guardar(Empleado entity)
         {
             entity.Codigo= base.Entities.Count == 0 ? 1 : base.Entities.Max(empleados => empleados.Codigo) + 1;

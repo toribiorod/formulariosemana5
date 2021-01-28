@@ -7,11 +7,11 @@ namespace CourseManagment.Domain.BL
 {
     public class ClienteBL : BaseBL<Cliente>, ICliente
     {
-        private List<Cliente> clientes;
+        //private List<Cliente> clientes;
 
-        public ClienteBL() {
+        /*public ClienteBL() {
             this.clientes = new List<Cliente>();
-        }
+        }*/
 
         public Cliente ObtenerClientePorCuenta(string cuenta)
         {

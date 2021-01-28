@@ -7,11 +7,11 @@ namespace CourseManagment.Domain.BL
 {
     public class ProfesorBL : BaseBL<Profesor>, IProfesor
     {
-        private List<Profesor> profesors;
-        public ProfesorBL() {
+        //private List<Profesor> profesors;
+        /*public ProfesorBL() {
 
             this.profesors = new List<Profesor>();
-        }
+        }*/
 
         public Profesor ObtenerEntity(string codigo)
         {
@@ -23,7 +23,7 @@ namespace CourseManagment.Domain.BL
         }
         public override void guardar(Profesor entity)
         {
-            entity.ProfesorID = this.profesors.Count == 0 ? 1 : this.profesors.Max(profesorId => profesorId.ProfesorID) + 1;
+            entity.ProfesorID = this.Entities.Count == 0 ? 1 : this.Entities.Max(profesorId => profesorId.ProfesorID) + 1;
             base.guardar(entity);
         }
 

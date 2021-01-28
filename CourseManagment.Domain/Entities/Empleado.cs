@@ -9,7 +9,7 @@ namespace CourseManagment.Domain.Entities
     {
         #region "Propiedades"
         
-        private List<Empleado> empleados;
+        //private List<Empleado> empleados;
         private decimal _sueldo;
         private int _codigo;
         public decimal Sueldo {
@@ -56,11 +56,11 @@ namespace CourseManagment.Domain.Entities
 
         #region "Metodos"
 
-        
-        public Empleado() {
+
+        /*public Empleado() {
             this.empleados = new List<Empleado>();          
         }
-        /* /// <summary>
+         /// <summary>
          /// Agregar un emeplado
          /// </summary>
          /// <param name="empleado"></param>

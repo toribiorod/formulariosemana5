@@ -11,7 +11,7 @@ namespace CourseManagment.Domain.Entities
         #region "Propiedades"
 
         public int ProfesorID { get; set; }
-        private List<Profesor> profesores;
+        //private List<Profesor> profesores;
         private string _codigo;
         private string _carrera;
         public string _departamento;
@@ -70,11 +70,11 @@ namespace CourseManagment.Domain.Entities
         #endregion
 
         #region "Metodos"
-        public Profesor() {
+        /*public Profesor() {
             this.profesores = new List<Profesor>();
         }
 
-      /*  public void agregarProfesores(Profesor profe) {
+        public void agregarProfesores(Profesor profe) {
             this.profesores.Add(profe);
         }
         public List<Profesor> obtenerProfesores() {

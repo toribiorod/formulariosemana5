@@ -15,7 +15,7 @@ namespace CourseManagment.Domain.BL
              get { return this.entities; } 
         }
         public virtual void guardar(TEntity entity) {
-            this.Entities.Add(entity);
+            this.entities.Add(entity);
         }
         public virtual void eliminar(TEntity entity) {
             this.entities.Remove(entity);
